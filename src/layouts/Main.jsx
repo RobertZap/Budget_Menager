@@ -4,7 +4,7 @@ import wave from "../assets/wave.svg";
 
 import Nav from "../components/Navi.jsx";
 
-import { fetchData } from "../helpers";
+import { fetchData } from "../helpers.js";
 
 export function mainLoader() {
   const userName = fetchData("userName");

@@ -1,5 +1,5 @@
 
-# Home Budget
+# Budget Manager
 
 https://earnest-pithivier-170889.netlify.app
 

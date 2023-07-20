@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { useFetcher } from "react-router-dom";
 
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
+import PropTypes from "prop-types";
 
 const AddExpenseForm = ({ budgets }) => {
   const fetcher = useFetcher();
@@ -83,5 +84,9 @@ const AddExpenseForm = ({ budgets }) => {
       </fetcher.Form>
     </div>
   );
+};
+
+AddExpenseForm.propTypes = {
+  budgets: PropTypes.number.isRequired,
 };
 export default AddExpenseForm;

@@ -1,11 +1,8 @@
-
-
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -17,6 +14,7 @@ img {
 svg {
   pointer-events: none;
 }
+
 
 :root {
   /* fonts */
@@ -37,7 +35,7 @@ svg {
   --light: 180 14% 85%;
   --warning: 4 66% 63%;
 
-  /* utils */
+
   --space-xs: 8px;
   --space-sm: 16px;
   --space-md: 24px;
@@ -123,15 +121,11 @@ p {
   font: inherit;
   color: var(--color);
   border-radius: var(--round-sm);
-  -webkit-transition: -webkit-box-shadow 300ms
-  cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   -o-transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-transition: -webkit-box-shadow 300ms
-  cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1),
-  -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: -webkit-box-shadow 300ms;
+cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1),
   -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -160,8 +154,6 @@ p {
   -ms-flex-align: center;
   align-items: center;
   gap: var(--space-xs);
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
   max-width: fit-content;
   cursor: pointer;
 }
@@ -182,9 +174,7 @@ p {
 }
 
 :where(.btn--outline):is(:hover, :focus-visible) {
-  --backdrop: var(--outline);
   --color: hsl(var(--bkg));
-  outline: 0px solid var(--outline);
 }
 
 :where(.btn--warning) {
@@ -273,11 +263,10 @@ p {
 }
 
 /* main layout */
+
 .layout {
-  display: -ms-grid;
   display: grid;
   min-height: 100vh;
-  -ms-grid-rows: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
 }
 
@@ -290,12 +279,12 @@ main {
   width: 100%;
   padding: var(--space-md) var(--space-md) var(--space-xl);
   margin-inline: auto;
-  display: -ms-grid;
   display: grid;
   place-items: start;
 }
 
 /* navbar */
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,11 +340,6 @@ select {
   cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   -o-transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-transition: -webkit-box-shadow 300ms
-  cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1),
-  -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1),
   -webkit-box-shadow 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -374,7 +358,7 @@ select {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-item-align: center;
+  /*-ms-flex-item-align: center;*/
   -ms-grid-row-align: center;
   align-self: center;
   -ms-grid-column-align: center;
@@ -546,13 +530,9 @@ progress[value]::-webkit-progress-value {
 
 /* error pages */
 .error {
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
   place-self: center;
-  display: -ms-grid;
   display: grid;
   place-items: center;
-  place-content: center;
   gap: var(--space-lg);
   padding-block: var(--space-lg);
   text-align: center;

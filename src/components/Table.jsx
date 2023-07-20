@@ -28,6 +28,6 @@ const Table = ({ expenses, showBudget = true }) => {
 
 Table.propTypes = {
   expenses: PropTypes.number.isRequired,
-  showBudget: PropTypes.func.isRequired,
+  showBudget: PropTypes.bool.isRequired,
 };
 export default Table;

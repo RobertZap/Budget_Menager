@@ -87,6 +87,6 @@ const AddExpenseForm = ({ budgets }) => {
 };
 
 AddExpenseForm.propTypes = {
-  budgets: PropTypes.number.isRequired,
+  budgets: PropTypes.array.isRequired,
 };
 export default AddExpenseForm;

@@ -15,7 +15,7 @@ export async function budgetLoader({ params }) {
     value: params.id,
   })[0];
 
-  const expenses = await getAllMatchingItems({
+  const expenses = getAllMatchingItems({
     category: "expenses",
     key: "budgetId",
     value: params.id,

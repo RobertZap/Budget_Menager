@@ -35,7 +35,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
         <div className="flex-sm">
           <Form
             method="post"
-            action="/delete"
+            action="delete"
             onSubmit={(event) => {
               if (
                 !confirm(
@@ -65,7 +65,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
 };
 
 BudgetItem.propTypes = {
-  budget: PropTypes.number.isRequired,
-  showDelete: PropTypes.bool.isRequired,
+  budget: PropTypes.object.isRequired,
+  showDelete: PropTypes.bool,
 };
 export default BudgetItem;

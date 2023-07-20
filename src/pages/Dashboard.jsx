@@ -28,6 +28,11 @@ export async function dashboardAction({ request }) {
 
   const data = await request.formData();
   const { _action, ...values } = Object.fromEntries(data);
+  values.newExpenseBudget = undefined;
+  values.newExpenseAmount = undefined;
+  values.newBudgetAmount = undefined;
+  values.newExpense = undefined;
+  values.newBudget = undefined;
 
   if (_action === "newUser") {
     try {
@@ -106,6 +111,7 @@ const Dashboard = () => {
                       expenses={expenses
                         .sort((a, b) => b.createdAt - a.createdAt)
                         .slice(0, 8)}
+                      showBudget
                     />
                     {expenses.length > 8 && (
                       <Link to="expenses" className="btn btn--dark">

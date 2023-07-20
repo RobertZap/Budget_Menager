@@ -14,6 +14,7 @@ export async function expensesLoader() {
 export async function expensesAction({ request }) {
   const data = await request.formData();
   const { _action, ...values } = Object.fromEntries(data);
+  values.expenseId = undefined;
 
   if (_action === "deleteExpense") {
     try {

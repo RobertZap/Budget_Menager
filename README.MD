@@ -1,7 +1,7 @@
 
 # Budget Manager
 
-https://earnest-pithivier-170889.netlify.app
+https://bespoke-mermaid-b630b1.netlify.app
 
 ## Description
 

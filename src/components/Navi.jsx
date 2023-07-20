@@ -3,6 +3,7 @@ import { Form, NavLink } from "react-router-dom";
 import { TrashIcon } from "@heroicons/react/24/solid";
 
 import logomark from "../assets/logomark.svg";
+import PropTypes from "prop-types";
 
 const Nav = ({ userName }) => {
   return (
@@ -14,7 +15,7 @@ const Nav = ({ userName }) => {
       {userName && (
         <Form
           method="post"
-          action="logout"
+          action="/logout"
           onSubmit={(event) => {
             if (!confirm("Delete user and all data?")) {
               event.preventDefault();
@@ -29,5 +30,9 @@ const Nav = ({ userName }) => {
       )}
     </nav>
   );
+};
+
+Nav.propTypes = {
+  userName: PropTypes.string.isRequired,
 };
 export default Nav;

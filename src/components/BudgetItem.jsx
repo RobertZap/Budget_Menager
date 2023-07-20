@@ -7,6 +7,7 @@ import {
   formatCurrency,
   formatPercentage,
 } from "../helpers";
+import PropTypes from "prop-types";
 
 const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount, color } = budget;
@@ -34,7 +35,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
         <div className="flex-sm">
           <Form
             method="post"
-            action="delete"
+            action="/delete"
             onSubmit={(event) => {
               if (
                 !confirm(
@@ -61,5 +62,10 @@ const BudgetItem = ({ budget, showDelete = false }) => {
       )}
     </div>
   );
+};
+
+BudgetItem.propTypes = {
+  budget: PropTypes.number.isRequired,
+  showDelete: PropTypes.bool.isRequired,
 };
 export default BudgetItem;

@@ -1,7 +1,7 @@
 
 # Budget Manager
 
-https://bespoke-mermaid-b630b1.netlify.app
+https://delightful-madeleine-99e6d1.netlify.app/
 
 ## Description
 

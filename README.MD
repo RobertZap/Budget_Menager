@@ -1,7 +1,7 @@
 
 # Budget Manager
 
-https://delightful-madeleine-99e6d1.netlify.app/
+https://regal-crisp-f3e940.netlify.app
 
 ## Description
 

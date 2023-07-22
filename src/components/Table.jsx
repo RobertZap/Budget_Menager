@@ -1,4 +1,3 @@
-// component import
 import ExpenseItem from "./ExpenseItem";
 
 const Table = ({ expenses, showBudget = true }) => {

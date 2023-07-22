@@ -1,13 +1,17 @@
+// rrd imports
 import { Link, useLoaderData } from "react-router-dom";
 
+// library imports
 import { toast } from "react-toastify";
 
+// components
 import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
 
+//  helper functions
 import {
   createBudget,
   createExpense,
@@ -16,6 +20,7 @@ import {
   waait,
 } from "../helpers";
 
+// loader
 export function dashboardLoader() {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
@@ -23,17 +28,14 @@ export function dashboardLoader() {
   return { userName, budgets, expenses };
 }
 
+// action
 export async function dashboardAction({ request }) {
   await waait();
 
   const data = await request.formData();
   const { _action, ...values } = Object.fromEntries(data);
-  values.newExpenseBudget = undefined;
-  values.newExpenseAmount = undefined;
-  values.newBudgetAmount = undefined;
-  values.newExpense = undefined;
-  values.newBudget = undefined;
 
+  // new user submission
   if (_action === "newUser") {
     try {
       localStorage.setItem("userName", JSON.stringify(values.userName));
@@ -111,7 +113,6 @@ const Dashboard = () => {
                       expenses={expenses
                         .sort((a, b) => b.createdAt - a.createdAt)
                         .slice(0, 8)}
-                      showBudget
                     />
                     {expenses.length > 8 && (
                       <Link to="expenses" className="btn btn--dark">

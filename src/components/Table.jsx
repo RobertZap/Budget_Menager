@@ -1,5 +1,5 @@
+// component import
 import ExpenseItem from "./ExpenseItem";
-import PropTypes from "prop-types";
 
 const Table = ({ expenses, showBudget = true }) => {
   return (
@@ -24,10 +24,5 @@ const Table = ({ expenses, showBudget = true }) => {
       </table>
     </div>
   );
-};
-
-Table.propTypes = {
-  expenses: PropTypes.number.isRequired,
-  showBudget: PropTypes.bool.isRequired,
 };
 export default Table;

@@ -1,13 +1,18 @@
+// rrd imports
 import { useLoaderData } from "react-router-dom";
 
+// library
 import { toast } from "react-toastify";
 
+// components
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
 
+// helpers
 import { createExpense, deleteItem, getAllMatchingItems } from "../helpers";
 
+// loader
 export async function budgetLoader({ params }) {
   const budget = await getAllMatchingItems({
     category: "budgets",
@@ -15,7 +20,7 @@ export async function budgetLoader({ params }) {
     value: params.id,
   })[0];
 
-  const expenses = getAllMatchingItems({
+  const expenses = await getAllMatchingItems({
     category: "expenses",
     key: "budgetId",
     value: params.id,
@@ -28,6 +33,7 @@ export async function budgetLoader({ params }) {
   return { budget, expenses };
 }
 
+// action
 export async function budgetAction({ request }) {
   const data = await request.formData();
   const { _action, ...values } = Object.fromEntries(data);
@@ -62,7 +68,12 @@ const BudgetPage = () => {
   const { budget, expenses } = useLoaderData();
 
   return (
-    <div className="grid-lg">
+    <div
+      className="grid-lg"
+      style={{
+        "--accent": budget.color,
+      }}
+    >
       <h1 className="h2">
         <span className="accent">{budget.name}</span> Overview
       </h1>

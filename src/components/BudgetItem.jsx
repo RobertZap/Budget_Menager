@@ -1,13 +1,15 @@
+// rrd imports
 import { Form, Link } from "react-router-dom";
 
+// library imports
 import { BanknotesIcon, TrashIcon } from "@heroicons/react/24/outline";
 
+// helper functions
 import {
   calculateSpentByBudget,
   formatCurrency,
   formatPercentage,
 } from "../helpers";
-import PropTypes from "prop-types";
 
 const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount, color } = budget;
@@ -62,10 +64,5 @@ const BudgetItem = ({ budget, showDelete = false }) => {
       )}
     </div>
   );
-};
-
-BudgetItem.propTypes = {
-  budget: PropTypes.object.isRequired,
-  showDelete: PropTypes.bool,
 };
 export default BudgetItem;
